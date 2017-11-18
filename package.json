@@ -1,0 +1,50 @@
+{
+    "name": "mycs",
+    "version": "0.0.1",
+    "description": "my core stuff",
+    "main": "index.js",
+    "scripts": {
+        "postinstall": "npm run once",
+        "start": "npm run watch",
+        "once": "npm run src-once && npm run test-once",
+        "watch": "concurrently -k -r 'salter' 'npm run src-watch' 'npm run test-watch'",
+        "src-once": "coffee -c -m -o ./js ./coffee",
+        "src-watch": "coffee -w -m -o ./js ./coffee",
+
+        "test-once": "coffee -c -m -o ./test/js ./test/coffee && wzp -em -im -bp ./test -p ./js/index.js",
+        "test-watch": "concurrently -k -r 'coffee -c -w -m -o ./test/js ./test/coffee' 'wzp -w -bp ./test -p ./js/index.js'",
+
+        "mocha-once": "mocha ./test/js/index.js || true",
+        "mocha-watch": "mocha -w ./test/js/index.js || true",
+
+        "karma-once": "karma start --single-run || true",
+        "karma-watch": "karma start || true"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/jarends/mycs.git"
+    },
+    "bugs": {
+        "url": "https://github.com/jarends/mycs/issues"
+    },
+    "author": "jarends",
+    "license": "Unlicense",
+    "dependencies": {
+        "emap": "0.0.12"
+    },
+    "devDependencies": {
+        "chai": "^4.0.2",
+        "coffee-script": "^1.12.6",
+        "concurrently": "^3.4.0",
+        "eventemitter3": "^2.0.3",
+        "karma": "^1.7.0",
+        "karma-chai": "^0.1.0",
+        "karma-chrome-launcher": "^2.2.0",
+        "karma-mocha": "^1.3.0",
+        "karma-mocha-clean-reporter": "0.0.1",
+        "mocha": "^3.4.2",
+        "node-sass": "^4.5.3",
+        "salter": "^1.1.4",
+        "werkzeug-packer": "0.0.5"
+    }
+}
