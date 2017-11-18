@@ -2,12 +2,12 @@
 {
     module.exports = {
         CmdMap:     require('./js/cmd-map'),
-        Dispatcher: require('./js/cmd-map'),
-        getBounds:  require('./js/cmd-map'),
-        KeyInfo:    require('./js/cmd-map'),
-        Rect:       require('./js/cmd-map'),
-        Store:      require('./js/cmd-map'),
-        utils:      require('./js/cmd-map'),
+        Dispatcher: require('./js/dispatcher'),
+        getBounds:  require('./js/get-bounds'),
+        KeyInfo:    require('./js/key-info'),
+        Rect:       require('./js/rect'),
+        Store:      require('./js/store'),
+        utils:      require('./js/utils') 
     };
 
 }).call(this);
