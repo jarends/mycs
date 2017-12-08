@@ -10,13 +10,10 @@
         "watch": "concurrently -k -r 'salter' 'npm run src-watch' 'npm run test-watch'",
         "src-once": "coffee -c -m -o ./js ./coffee",
         "src-watch": "coffee -w -m -o ./js ./coffee",
-
         "test-once": "coffee -c -m -o ./test/js ./test/coffee && wzp -em -im -bp ./test -p ./js/index.js",
         "test-watch": "concurrently -k -r 'coffee -c -w -m -o ./test/js ./test/coffee' 'wzp -w -bp ./test -p ./js/index.js'",
-
         "mocha-once": "mocha ./test/js/index.js || true",
         "mocha-watch": "mocha -w ./test/js/index.js || true",
-
         "karma-once": "karma start --single-run || true",
         "karma-watch": "karma start || true"
     },
@@ -45,6 +42,6 @@
         "mocha": "^3.4.2",
         "node-sass": "^4.5.3",
         "salter": "^1.1.4",
-        "werkzeug-packer": "0.0.5"
+        "werkzeug-packer": "0.0.7"
     }
 }
