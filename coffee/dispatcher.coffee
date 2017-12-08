@@ -114,7 +114,8 @@ class Dispatcher
         listeners = @listenerMap[type]
         return false if not listeners
 
-        for info in listeners.concat()
+        copy = listeners.concat()
+        for info in copy
             @remove(type, info.handler, info.owner, info.once) if info.once
             info.handler.apply(info.owner, args)
 
